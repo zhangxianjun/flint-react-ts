@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from "@emotion/styled";
 
 export interface Props {
     name: string;
@@ -7,12 +8,16 @@ export interface Props {
 
 function Login({ name, enthusiasmLevel = 1 }: Props) {
     return (
-        <div className="hello">
+        <PrintWord>
             <div className="greeting">
                 Hello {name + enthusiasmLevel}
             </div>
-        </div>
+        </PrintWord>
     );
 }
+
+const PrintWord = styled.div `
+  background-color: red;
+`
 
 export default Login;
