@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Login from "./controller/Login";
+import Login from "controller/Login";
 
 
 function App() {
