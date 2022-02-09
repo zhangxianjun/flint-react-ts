@@ -1,4 +1,4 @@
-import {Anchor, Breadcrumb, Card, Divider, Layout, Menu, Space} from 'antd';
+import {Anchor, Breadcrumb, Card, Divider, Layout, List, Menu, Space, Typography} from 'antd';
 import {
     BulbOutlined,
     DesktopOutlined,
@@ -15,6 +15,14 @@ const { Header, Sider, Content } = Layout;
 
 function Main() {
     const [state, setState] = useState({collapsed: false});
+
+    const data = [
+        'Racing car sprays burning fuel into crowd.',
+        'Japanese princess to wed commoner.',
+        'Australian walks 100km after outback crash.',
+        'Man charged over missing wedding girl.',
+        'Los Angeles battles huge wildfires.',
+    ];
 
     function onCollapse() {
         if (state.collapsed === false) {
@@ -66,7 +74,16 @@ function Main() {
                         <Breadcrumb.Item>今日待办</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="site-layout-background" style={{ padding: '16px', minHeight: 360 }}>
-                        Bill is a cat.
+                        <Divider>今日任务</Divider>
+                        <List
+                            bordered
+                            dataSource={data}
+                            renderItem={item => (
+                                <List.Item>
+                                    <Typography.Text mark>[ITEM]</Typography.Text> {item}
+                                </List.Item>
+                            )}
+                        />
                     </div>
                     <Divider>外链导航</Divider>
                     <Space style={{ padding: '16px'}}>
