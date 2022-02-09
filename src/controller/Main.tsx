@@ -9,9 +9,9 @@ import {
 } from '@ant-design/icons';
 import {useState} from "react";
 import styled from "@emotion/styled";
-
-const {Sider, Content} = Layout;
-
+import {Routes, Route, Link, BrowserRouter} from "react-router-dom";
+import Login from "./Login";
+import {MenuClickEventHandler, MenuInfo} from "rc-menu/lib/interface";
 
 function Main() {
 
@@ -27,8 +27,12 @@ function Main() {
         <Layout style={{minHeight: '100vh'}}>
             <PageSide></PageSide>
             <Layout className="site-layout">
-                {/*<Header style={{ padding: 0, background: '#fff' }} />*/}
-                <Content style={{background: '#fff'}}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path={'/'} element={<Login name={'zxj'}></Login>}></Route>
+                    </Routes>
+                </BrowserRouter>
+                <Layout.Content style={{background: '#fff'}}>
                     <Breadcrumb style={{margin: '16px'}}>
                         <Breadcrumb.Item>我的工作</Breadcrumb.Item>
                         <Breadcrumb.Item>今日待办</Breadcrumb.Item>
@@ -64,7 +68,7 @@ function Main() {
                             <p>原型&设计图</p>
                         </Card>
                     </Space>
-                </Content>
+                </Layout.Content>
             </Layout>
         </Layout>
     );
@@ -84,10 +88,15 @@ const PageSide = () => {
         }
     };
 
+    function routeClick(evt: MenuInfo) {
+        console.log("===" + evt.key);
+        // 获取到key进行跳转
+    }
+
     return (
-        <Sider collapsible collapsed={state.collapsed} onCollapse={onCollapse}>
+        <Layout.Sider collapsible collapsed={state.collapsed} onCollapse={onCollapse}>
             <Logo>Flint</Logo>
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu theme="dark" defaultSelectedKeys={['21']} mode="inline" onClick={routeClick}>
                 <Menu.SubMenu key="20" icon={<DesktopOutlined/>} title="我的工作">
                     <Menu.Item key="21">今日待办</Menu.Item>
                     <Menu.Item key="22">参与项目</Menu.Item>
@@ -117,7 +126,7 @@ const PageSide = () => {
                     <Menu.Item key="200">Flint教程</Menu.Item>
                 </Menu.SubMenu>
             </Menu>
-        </Sider>
+        </Layout.Sider>
     );
 }
 
