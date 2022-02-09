@@ -10,7 +10,7 @@ import {
 import {useState} from "react";
 import styled from "@emotion/styled";
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 
 function Main() {
@@ -63,6 +63,7 @@ function Main() {
                     <Menu.SubMenu key="120" icon={<SettingOutlined />} title="系统管理">
                         <Menu.Item key="121">用户管理</Menu.Item>
                         <Menu.Item key="122">权限管理</Menu.Item>
+                        <Menu.Item key="200">Flint教程</Menu.Item>
                     </Menu.SubMenu>
                 </Menu>
             </Sider>
