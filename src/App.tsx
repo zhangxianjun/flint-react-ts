@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import Login from "controller/Login";
+import Main from "./controller/Main";
 
 
 function App() {
   return (
-    <Login name={"zxj"} enthusiasmLevel={2}></Login>
+        <Main></Main>
   );
 }
 
