@@ -1,4 +1,4 @@
-import {Breadcrumb, Layout, Menu} from 'antd';
+import {Anchor, Breadcrumb, Card, Divider, Layout, Menu, Space} from 'antd';
 import {
     BulbOutlined,
     DesktopOutlined,
@@ -11,7 +11,6 @@ import {useState} from "react";
 import styled from "@emotion/styled";
 
 const { Header, Sider, Content } = Layout;
-const { SubMenu } = Menu;
 
 
 function Main() {
@@ -28,33 +27,66 @@ function Main() {
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={state.collapsed} onCollapse={onCollapse}>
-                <Logo>Flint Admin</Logo>
+                <Logo>Flint</Logo>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item key="1" icon={<DesktopOutlined />}>我的工作</Menu.Item>
-                    <Menu.Item key="2" icon={<BulbOutlined />}> 产品管理 </Menu.Item>
-                    <SubMenu key="sub1" icon={<CodeOutlined />} title="开发管理">
-                        <Menu.Item key="3">Tom</Menu.Item>
-                        <Menu.Item key="4">Bill</Menu.Item>
-                        <Menu.Item key="5">Alex</Menu.Item>
-                    </SubMenu>
-                    <SubMenu key="sub2" icon={<FileSearchOutlined />} title="测试管理">
-                        <Menu.Item key="6">Team 1</Menu.Item>
-                        <Menu.Item key="8">Team 2</Menu.Item>
-                    </SubMenu>
-                    <Menu.Item key="9" icon={<CiCircleOutlined />}> 运维管理 </Menu.Item>
-                    <Menu.Item key="10" icon={<SettingOutlined />}> 系统管理 </Menu.Item>
+                    <Menu.SubMenu key="20" icon={<DesktopOutlined />} title="我的工作">
+                        <Menu.Item key="21">今日待办</Menu.Item>
+                        <Menu.Item key="22">参与项目</Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu key="40" icon={<BulbOutlined />} title="产品管理">
+                        <Menu.Item key="41">产品规划</Menu.Item>
+                        <Menu.Item key="42">产品原型</Menu.Item>
+                        <Menu.Item key="43">设计资源</Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu key="60" icon={<CodeOutlined />} title="开发管理">
+                        <Menu.Item key="61">设计文稿</Menu.Item>
+                        <Menu.Item key="62">开发计划</Menu.Item>
+                        <Menu.Item key="63">源码地址</Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu key="80" icon={<FileSearchOutlined />} title="测试管理">
+                        <Menu.Item key="81">测试用例</Menu.Item>
+                        <Menu.Item key="82">BUG管理</Menu.Item>
+                        <Menu.Item key="83">测试报告</Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu key="100" icon={<CiCircleOutlined />} title="运维管理">
+                        <Menu.Item key="101">账号管理</Menu.Item>
+                        <Menu.Item key="102">检测报告</Menu.Item>
+                    </Menu.SubMenu>
+                    <Menu.SubMenu key="120" icon={<SettingOutlined />} title="系统管理">
+                        <Menu.Item key="121">用户管理</Menu.Item>
+                        <Menu.Item key="122">权限管理</Menu.Item>
+                    </Menu.SubMenu>
                 </Menu>
             </Sider>
             <Layout className="site-layout">
                 {/*<Header style={{ padding: 0, background: '#fff' }} />*/}
-                <Content style={{ margin: '0 16px' }}>
-                    <Breadcrumb style={{ margin: '16px 0' }}>
-                        <Breadcrumb.Item>User</Breadcrumb.Item>
-                        <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                <Content style={{ background: '#fff'}}>
+                    <Breadcrumb style={{ margin: '16px' }}>
+                        <Breadcrumb.Item>我的工作</Breadcrumb.Item>
+                        <Breadcrumb.Item>今日待办</Breadcrumb.Item>
                     </Breadcrumb>
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                    <div className="site-layout-background" style={{ padding: '16px', minHeight: 360 }}>
                         Bill is a cat.
                     </div>
+                    <Divider>外链导航</Divider>
+                    <Space style={{ padding: '16px'}}>
+                        <Card style={{ width: 180 }}>
+                            <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
+                            <p>原型&设计图</p>
+                        </Card>
+                        <Card style={{ width: 180 }}>
+                            <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
+                            <p>原型&设计图</p>
+                        </Card>
+                        <Card style={{ width: 180 }}>
+                            <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
+                            <p>原型&设计图</p>
+                        </Card>
+                        <Card style={{ width: 180 }}>
+                            <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
+                            <p>原型&设计图</p>
+                        </Card>
+                    </Space>
                 </Content>
             </Layout>
         </Layout>
