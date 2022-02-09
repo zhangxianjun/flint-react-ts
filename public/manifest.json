@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Flint Admin",
+  "name": "团队协作管理后台",
   "icons": [
     {
       "src": "favicon.ico",
