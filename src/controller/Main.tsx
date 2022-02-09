@@ -1,10 +1,11 @@
 import {Breadcrumb, Layout, Menu} from 'antd';
 import {
-    PieChartOutlined,
+    BulbOutlined,
     DesktopOutlined,
-    UserOutlined,
-    TeamOutlined,
-    FileOutlined,
+    CodeOutlined,
+    CiCircleOutlined,
+    FileSearchOutlined,
+    SettingOutlined
 } from '@ant-design/icons';
 import {useState} from "react";
 import styled from "@emotion/styled";
@@ -27,26 +28,21 @@ function Main() {
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={state.collapsed} onCollapse={onCollapse}>
-                <Logo></Logo>
+                <Logo>Flint Admin</Logo>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item key="1" icon={<PieChartOutlined />}>
-                        Option 1
-                    </Menu.Item>
-                    <Menu.Item key="2" icon={<DesktopOutlined />}>
-                        Option 2
-                    </Menu.Item>
-                    <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+                    <Menu.Item key="1" icon={<DesktopOutlined />}>我的工作</Menu.Item>
+                    <Menu.Item key="2" icon={<BulbOutlined />}> 产品管理 </Menu.Item>
+                    <SubMenu key="sub1" icon={<CodeOutlined />} title="开发管理">
                         <Menu.Item key="3">Tom</Menu.Item>
                         <Menu.Item key="4">Bill</Menu.Item>
                         <Menu.Item key="5">Alex</Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+                    <SubMenu key="sub2" icon={<FileSearchOutlined />} title="测试管理">
                         <Menu.Item key="6">Team 1</Menu.Item>
                         <Menu.Item key="8">Team 2</Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="9" icon={<FileOutlined />}>
-                        Files
-                    </Menu.Item>
+                    <Menu.Item key="9" icon={<CiCircleOutlined />}> 运维管理 </Menu.Item>
+                    <Menu.Item key="10" icon={<SettingOutlined />}> 系统管理 </Menu.Item>
                 </Menu>
             </Sider>
             <Layout className="site-layout">
@@ -68,6 +64,10 @@ function Main() {
 export default Main;
 
 const Logo = styled.div `
+  text-align: center;
+  line-height: 32px;
+  font-size: 20px;
+  color: #fff;
   height: 32px;
   margin: 16px;
   background: rgba(255, 255, 255, 0.3);
