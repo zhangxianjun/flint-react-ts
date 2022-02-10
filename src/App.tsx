@@ -3,9 +3,9 @@ import './App.css';
 import Main from "./controller/Main";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Login from "./controller/Login";
-import {Todo} from "./controller/Todo";
-import {Program} from "./controller/Program";
-
+import {Todo} from "./controller/work/Todo";
+import {Program} from "./controller/work/Program";
+import {Planning} from "./controller/product/Planning";
 
 function App() {
     return (
@@ -16,6 +16,7 @@ function App() {
                     <Route index element={<Todo />} />
                     <Route path="work/todo" element={<Todo />} />
                     <Route path="work/program" element={<Program />} />
+                    <Route path="product/planning" element={<Planning />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
