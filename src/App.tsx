@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import Login from "controller/Login";
 import Main from "./controller/Main";
+import {BrowserRouter} from "react-router-dom";
 
 
 function App() {
   return (
-        <Main></Main>
+      <BrowserRouter>
+          <Main></Main>
+      </BrowserRouter>
   );
 }
 

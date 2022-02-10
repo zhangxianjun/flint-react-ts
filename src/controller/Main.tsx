@@ -1,4 +1,4 @@
-import {Anchor, Breadcrumb, Card, Divider, Layout, List, Menu, Space, Typography} from 'antd';
+import {Layout, Menu} from 'antd';
 import {
     BulbOutlined,
     DesktopOutlined,
@@ -9,9 +9,9 @@ import {
 } from '@ant-design/icons';
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {Routes, Route, Link, BrowserRouter} from "react-router-dom";
+import {Routes, Route, useNavigate} from "react-router-dom";
 import Login from "./Login";
-import {MenuClickEventHandler, MenuInfo} from "rc-menu/lib/interface";
+import {MenuInfo} from "rc-menu/lib/interface";
 import {TodayTodo} from "./TodayTodo";
 
 function Main() {
@@ -20,12 +20,12 @@ function Main() {
         <Layout style={{minHeight: '100vh'}}>
             <PageSide></PageSide>
             <Layout className="site-layout">
-                <BrowserRouter>
+                {/*<BrowserRouter>*/}
                     <Routes>
                         <Route path={'/'} element={<Login name={'zxj'}></Login>}></Route>
                         <Route path={'/today/todo'} element={<TodayTodo></TodayTodo>}></Route>
                     </Routes>
-                </BrowserRouter>
+                {/*</BrowserRouter>*/}
             </Layout>
         </Layout>
     );
@@ -34,6 +34,8 @@ function Main() {
 export default Main;
 
 const PageSide = () => {
+
+    const navigate = useNavigate();
 
     const [state, setState] = useState({collapsed: false});
 
@@ -49,7 +51,7 @@ const PageSide = () => {
         console.log("===" + evt.key);
         // 获取到key进行跳转
         if (evt.key === '21') {
-            // <Link to={"/today/todo"}></Link>
+            navigate("/today/todo", {});
         }
     }
 
