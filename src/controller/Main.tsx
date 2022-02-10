@@ -9,10 +9,8 @@ import {
 } from '@ant-design/icons';
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {Routes, Route, useNavigate} from "react-router-dom";
-import Login from "./Login";
+import {useNavigate, Link, Outlet} from "react-router-dom";
 import {MenuInfo} from "rc-menu/lib/interface";
-import {TodayTodo} from "./TodayTodo";
 
 function Main() {
 
@@ -20,10 +18,7 @@ function Main() {
         <Layout style={{minHeight: '100vh'}}>
             <PageSide></PageSide>
             <Layout className="site-layout">
-                <Routes>
-                    <Route path={'/'} element={<Login name={'zxj'}></Login>}></Route>
-                    <Route path={'/today/todo'} element={<TodayTodo></TodayTodo>}></Route>
-                </Routes>
+                <Outlet />
             </Layout>
         </Layout>
     );
@@ -49,7 +44,10 @@ const PageSide = () => {
         console.log("===" + evt.key);
         // 获取到key进行跳转
         if (evt.key === '21') {
-            navigate("/today/todo", {});
+            navigate("work/todo", {});
+        }
+        if (evt.key === '22') {
+            navigate("work/program", {});
         }
     }
 

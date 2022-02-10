@@ -1,6 +1,6 @@
 import {Breadcrumb, Card, Divider, Layout, List, Space, Typography} from "antd";
 
-export const TodayTodo = () => {
+export const Todo = () => {
 
     const data = [
         'Racing car sprays burning fuel into crowd.',

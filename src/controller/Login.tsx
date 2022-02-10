@@ -4,6 +4,8 @@ import {Button, Card, Col, Form, Input, Row} from "antd";
 import {UserOutlined, LockOutlined} from "@ant-design/icons";
 import FormItemLabel from "antd/es/form/FormItemLabel";
 import Title from "antd/es/typography/Title";
+import {BrowserRouter, useNavigate} from "react-router-dom";
+import Main from "./Main";
 
 export interface Props {
     name: string;
@@ -12,8 +14,13 @@ export interface Props {
 
 function Login({name, enthusiasmLevel = 1}: Props) {
 
+    const navigate = useNavigate();
+
     const onFinish = (values: any) => {
         console.log('Received values of form: ', values.account);
+        // 网络请求
+        // localStorage.setItem("uk", values.account);
+        navigate("/main");
     };
 
     return (
