@@ -6,6 +6,7 @@ import FormItemLabel from "antd/es/form/FormItemLabel";
 import Title from "antd/es/typography/Title";
 import {BrowserRouter, useNavigate} from "react-router-dom";
 import Main from "./Main";
+import axios from "axios";
 
 export interface Props {
     name: string;
@@ -20,7 +21,20 @@ function Login({name, enthusiasmLevel = 1}: Props) {
         console.log('Received values of form: ', values.account);
         // 网络请求
         // localStorage.setItem("uk", values.account);
-        navigate("/main");
+        let url = "https://mine.ptest.cc/api/v1/mine/sign/in";
+        let req = "{\"account\": \"18698581176\",\"password\": \"123456\"}";
+
+        axios.post(url, {
+            account: '18698581176',
+            password: '123456'
+        }).then(function (response) {
+            console.log(response);
+            navigate("/m");
+        }).catch(function (error) {
+            console.log(error);
+        });
+
+
     };
 
     return (
@@ -28,13 +42,13 @@ function Login({name, enthusiasmLevel = 1}: Props) {
             <Row style={{background: "#EEEEEE", height: "100vh"}} justify={"center"} align={"middle"}>
                 <Col span={5}>
                     <Container>
-                        <Title level={4} style={{marginTop:"15px", textAlign: "center"}}>Flint Admin</Title>
+                        <Title level={4} style={{marginTop: "15px", textAlign: "center"}}>Flint Admin</Title>
                         <Form
                             name="normal_login"
                             className="login-form"
                             initialValues={{remember: true}}
                             onFinish={onFinish}
-                            style={{marginTop:"25px"}}
+                            style={{marginTop: "25px"}}
                         >
                             <Form.Item
                                 name="account"
