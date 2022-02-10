@@ -17,8 +17,8 @@ export const Todo = () => {
               <Breadcrumb.Item>今日待办</Breadcrumb.Item>
           </Breadcrumb>
           <div className="site-layout-background" style={{padding: '16px', minHeight: 360}}>
-              <Divider>今日任务</Divider>
               <List
+                  header="我的任务"
                   bordered
                   dataSource={data}
                   renderItem={item => (
@@ -28,25 +28,6 @@ export const Todo = () => {
                   )}
               />
           </div>
-          <Divider>外链导航</Divider>
-          <Space style={{padding: '16px'}}>
-              <Card style={{width: 180}}>
-                  <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
-                  <p>原型&设计图</p>
-              </Card>
-              <Card style={{width: 180}}>
-                  <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
-                  <p>原型&设计图</p>
-              </Card>
-              <Card style={{width: 180}}>
-                  <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
-                  <p>原型&设计图</p>
-              </Card>
-              <Card style={{width: 180}}>
-                  <a href={'https://lanhuapp.com/'} target="_blank">蓝湖</a>
-                  <p>原型&设计图</p>
-              </Card>
-          </Space>
       </Layout.Content>
   );
 }

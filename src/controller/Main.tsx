@@ -58,6 +58,7 @@ const PageSide = () => {
                 <Menu.SubMenu key="20" icon={<DesktopOutlined/>} title="我的工作">
                     <Menu.Item key="21">今日待办</Menu.Item>
                     <Menu.Item key="22">参与项目</Menu.Item>
+                    <Menu.Item key="23">外链导航</Menu.Item>
                 </Menu.SubMenu>
                 <Menu.SubMenu key="40" icon={<BulbOutlined/>} title="产品管理">
                     <Menu.Item key="41">产品规划</Menu.Item>
