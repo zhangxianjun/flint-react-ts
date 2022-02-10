@@ -20,12 +20,10 @@ function Main() {
         <Layout style={{minHeight: '100vh'}}>
             <PageSide></PageSide>
             <Layout className="site-layout">
-                {/*<BrowserRouter>*/}
-                    <Routes>
-                        <Route path={'/'} element={<Login name={'zxj'}></Login>}></Route>
-                        <Route path={'/today/todo'} element={<TodayTodo></TodayTodo>}></Route>
-                    </Routes>
-                {/*</BrowserRouter>*/}
+                <Routes>
+                    <Route path={'/'} element={<Login name={'zxj'}></Login>}></Route>
+                    <Route path={'/today/todo'} element={<TodayTodo></TodayTodo>}></Route>
+                </Routes>
             </Layout>
         </Layout>
     );
