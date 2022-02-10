@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login name={'zxj'}></Login>} />
-                <Route path="/main" element={<Main />}>
+                <Route path="/m" element={<Main />}>
                     <Route index element={<Todo />} />
                     <Route path="work/todo" element={<Todo />} />
                     <Route path="work/program" element={<Program />} />
