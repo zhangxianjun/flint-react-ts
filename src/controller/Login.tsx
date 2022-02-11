@@ -1,11 +1,9 @@
 import * as React from 'react';
 import styled from "@emotion/styled";
-import {Button, Card, Col, Form, Input, Row} from "antd";
+import {Button, Col, Form, Input, Row} from "antd";
 import {UserOutlined, LockOutlined} from "@ant-design/icons";
-import FormItemLabel from "antd/es/form/FormItemLabel";
 import Title from "antd/es/typography/Title";
-import {BrowserRouter, useNavigate} from "react-router-dom";
-import Main from "./Main";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
 export interface Props {

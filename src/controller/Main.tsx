@@ -9,7 +9,7 @@ import {
 } from '@ant-design/icons';
 import {useState} from "react";
 import styled from "@emotion/styled";
-import {useNavigate, Link, Outlet} from "react-router-dom";
+import {useNavigate, Outlet} from "react-router-dom";
 import {MenuInfo} from "rc-menu/lib/interface";
 
 function Main() {

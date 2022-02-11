@@ -1,4 +1,4 @@
-import {Breadcrumb, Card, Divider, Layout, List, Space, Typography} from "antd";
+import {Breadcrumb, Layout} from "antd";
 
 export const Program = () => {
     return (
