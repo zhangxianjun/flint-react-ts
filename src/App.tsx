@@ -7,6 +7,7 @@ import {Todo} from "./controller/work/Todo";
 import {Program} from "./controller/work/Program";
 import {Planning} from "./controller/product/Planning";
 import {Navigation} from "./controller/work/Navigation";
+import {UserList} from "./controller/system/UserList";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="work/program" element={<Program />} />
                     <Route path="work/navigation" element={<Navigation />}/>
                     <Route path="product/planning" element={<Planning />}/>
+                    <Route path="system/user/list" element={<UserList />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
