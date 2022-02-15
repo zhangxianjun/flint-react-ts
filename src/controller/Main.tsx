@@ -13,12 +13,11 @@ import {useNavigate, Outlet} from "react-router-dom";
 import {MenuInfo} from "rc-menu/lib/interface";
 
 function Main() {
-
     return (
         <Layout style={{minHeight: '100vh'}}>
             <PageSide></PageSide>
             <Layout className="site-layout">
-                <Outlet />
+                <Outlet/>
             </Layout>
         </Layout>
     );
@@ -27,6 +26,72 @@ function Main() {
 export default Main;
 
 const PageSide = () => {
+
+    const navigationList = [{
+        "n": "work",
+        "t": "我的工作",
+        "sl": [{
+            "sn": "work/todo",
+            "st": "今日待办",
+        },
+            {
+                "sn": "work/program",
+                "st": "我的工作",
+            },
+            {
+                "sn": "work/navigation",
+                "st": "外链导航",
+            }
+        ]
+    }
+    ];
+    // },
+    //     {
+    //         "work": "",
+    //
+    //     },
+    //     {
+    //         "product": "产品管理",
+    //         "work": "产品规划",
+    //         "work1": "产品原型",
+    //         "work2": "设计资源",
+    //     },
+    //     {
+    //         "product": "开发管理",
+    //         "work": "设计文稿",
+    //         "work1": "开发计划",
+    //         "work2": "源码地址",
+    //     },
+    //     {
+    //         "product": "测试管理",
+    //         "work": "测试用例",
+    //         "work1": "BUG管理",
+    //         "work2": "测试报告",
+    //     },
+    //     {
+    //         "product": "运维管理",
+    //         "work": "账号管理",
+    //         "work1": "监测报告",
+    //     },
+    //     {
+    //         "product": "系统管理",
+    //         "work": "用户管理",
+    //         "work1": "权限管理",
+    //         "work2": "Flint教程",
+    //     },
+
+    // const Sub = ((sl: any) => {
+    //     <Menu.Item key={sl.sn}>{sl.st}</Menu.Item>
+    // });
+
+    const side = navigationList.map((menu) =>
+        <Menu.SubMenu key={menu.n} icon={<DesktopOutlined/>} title={menu.t}>
+            { menu.sl.map((sl) =>
+                <Menu.Item key={sl.sn}>{sl.st}</Menu.Item>
+            )}
+        </Menu.SubMenu>
+    );
+
 
     const navigate = useNavigate();
 
@@ -55,35 +120,36 @@ const PageSide = () => {
         <Layout.Sider collapsible collapsed={state.collapsed} onCollapse={onCollapse}>
             <Logo>Flint</Logo>
             <Menu theme="dark" defaultSelectedKeys={['21']} mode="inline" onClick={routeClick}>
-                <Menu.SubMenu key="20" icon={<DesktopOutlined/>} title="我的工作">
-                    <Menu.Item key="21">今日待办</Menu.Item>
-                    <Menu.Item key="22">参与项目</Menu.Item>
-                    <Menu.Item key="23">外链导航</Menu.Item>
-                </Menu.SubMenu>
-                <Menu.SubMenu key="40" icon={<BulbOutlined/>} title="产品管理">
-                    <Menu.Item key="41">产品规划</Menu.Item>
-                    <Menu.Item key="42">产品原型</Menu.Item>
-                    <Menu.Item key="43">设计资源</Menu.Item>
-                </Menu.SubMenu>
-                <Menu.SubMenu key="60" icon={<CodeOutlined/>} title="开发管理">
-                    <Menu.Item key="61">设计文稿</Menu.Item>
-                    <Menu.Item key="62">开发计划</Menu.Item>
-                    <Menu.Item key="63">源码地址</Menu.Item>
-                </Menu.SubMenu>
-                <Menu.SubMenu key="80" icon={<FileSearchOutlined/>} title="测试管理">
-                    <Menu.Item key="81">测试用例</Menu.Item>
-                    <Menu.Item key="82">BUG管理</Menu.Item>
-                    <Menu.Item key="83">测试报告</Menu.Item>
-                </Menu.SubMenu>
-                <Menu.SubMenu key="100" icon={<CiCircleOutlined/>} title="运维管理">
-                    <Menu.Item key="101">账号管理</Menu.Item>
-                    <Menu.Item key="102">检测报告</Menu.Item>
-                </Menu.SubMenu>
-                <Menu.SubMenu key="120" icon={<SettingOutlined/>} title="系统管理">
-                    <Menu.Item key="121">用户管理</Menu.Item>
-                    <Menu.Item key="122">权限管理</Menu.Item>
-                    <Menu.Item key="200">Flint教程</Menu.Item>
-                </Menu.SubMenu>
+                {side}
+                {/*<Menu.SubMenu key="20" icon={<DesktopOutlined/>} title="我的工作">*/}
+                {/*    <Menu.Item key="21">今日待办</Menu.Item>*/}
+                {/*    <Menu.Item key="22">参与项目</Menu.Item>*/}
+                {/*    <Menu.Item key="23">外链导航</Menu.Item>*/}
+                {/*</Menu.SubMenu>*/}
+                {/*<Menu.SubMenu key="40" icon={<BulbOutlined/>} title="产品管理">*/}
+                {/*    <Menu.Item key="41">产品规划</Menu.Item>*/}
+                {/*    <Menu.Item key="42">产品原型</Menu.Item>*/}
+                {/*    <Menu.Item key="43">设计资源</Menu.Item>*/}
+                {/*</Menu.SubMenu>*/}
+                {/*<Menu.SubMenu key="60" icon={<CodeOutlined/>} title="开发管理">*/}
+                {/*    <Menu.Item key="61">设计文稿</Menu.Item>*/}
+                {/*    <Menu.Item key="62">开发计划</Menu.Item>*/}
+                {/*    <Menu.Item key="63">源码地址</Menu.Item>*/}
+                {/*</Menu.SubMenu>*/}
+                {/*<Menu.SubMenu key="80" icon={<FileSearchOutlined/>} title="测试管理">*/}
+                {/*    <Menu.Item key="81">测试用例</Menu.Item>*/}
+                {/*    <Menu.Item key="82">BUG管理</Menu.Item>*/}
+                {/*    <Menu.Item key="83">测试报告</Menu.Item>*/}
+                {/*</Menu.SubMenu>*/}
+                {/*<Menu.SubMenu key="100" icon={<CiCircleOutlined/>} title="运维管理">*/}
+                {/*    <Menu.Item key="101">账号管理</Menu.Item>*/}
+                {/*    <Menu.Item key="102">检测报告</Menu.Item>*/}
+                {/*</Menu.SubMenu>*/}
+                {/*<Menu.SubMenu key="120" icon={<SettingOutlined/>} title="系统管理">*/}
+                {/*    <Menu.Item key="121">用户管理</Menu.Item>*/}
+                {/*    <Menu.Item key="122">权限管理</Menu.Item>*/}
+                {/*    <Menu.Item key="200">Flint教程</Menu.Item>*/}
+                {/*</Menu.SubMenu>*/}
             </Menu>
         </Layout.Sider>
     );
