@@ -1,44 +1,57 @@
-import {Breadcrumb, Layout, List, Table, Typography} from "antd";
+import {Breadcrumb, Button, Layout, Table} from "antd";
+import axios from "axios";
 
 export const UserList = () => {
 
+
+    // const onFinish = (values: any) => {
+    //     console.log('Received values of form: ', values.account);
+    //     // 网络请求
+    //     // localStorage.setItem("uk", values.account);
+    //     let url = "https://mine.ptest.cc/api/v1/mine/sign/in";
+    //     let req = "{\"account\": \"18698581176\",\"password\": \"123456\"}";
+    //
+    //     axios.post(url, {
+    //         account: '18698581176',
+    //         password: '123456'
+    //     }).then(function (response) {
+    //         console.log(response);
+    //         navigate("/m");
+    //     }).catch(function (error) {
+    //         console.log(error);
+    //     });
+    // };
+
+
     const columns = [
         {
-            title: 'Name',
-            dataIndex: 'name',
-            // render: text => <a>{text}</a>,
+            title: '用户ID',
+            dataIndex: 'id',
         },
         {
-            title: 'Cash Assets',
-            // className: 'column-money',
-            dataIndex: 'money',
-            // align: 'right',
+            title: '中文名字',
+            dataIndex: 'cn_name',
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
+            title: '手机号码',
+            dataIndex: 'phone',
+        },
+        {
+            title: '英文名字',
+            dataIndex: 'en_name',
+        },
+        {
+            title: '用户状态',
+            dataIndex: 'status',
+        },
+        {
+            title: '注册时间',
+            dataIndex: 'create_time',
         },
     ];
 
     const data = [
-        {
-            key: '1',
-            name: 'John Brown',
-            money: '￥300,000.00',
-            address: 'New York No. 1 Lake Park',
-        },
-        {
-            key: '2',
-            name: 'Jim Green',
-            money: '￥1,256,000.00',
-            address: 'London No. 1 Lake Park',
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            money: '￥120,000.00',
-            address: 'Sidney No. 1 Lake Park',
-        },
+        {},
     ];
 
     return (
@@ -48,6 +61,7 @@ export const UserList = () => {
                 <Breadcrumb.Item>用户管理</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-background" style={{padding: '16px', minHeight: 360}}>
+                <Button type="primary" style={{marginBottom: "20px"}}>新增用户</Button>
                 <Table
                     columns={columns}
                     dataSource={data}

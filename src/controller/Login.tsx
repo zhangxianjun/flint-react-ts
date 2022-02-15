@@ -31,8 +31,6 @@ function Login({name, enthusiasmLevel = 1}: Props) {
         }).catch(function (error) {
             console.log(error);
         });
-
-
     };
 
     return (
