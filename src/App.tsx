@@ -21,6 +21,7 @@ function App() {
                     <Route path="work/navigation" element={<Navigation />}/>
                     <Route path="product/planning" element={<Planning />}/>
                     <Route path="system/user/list" element={<UserList />}/>
+                    <Route path="system/flint/tutorial" element={<UserList />}/>
                 </Route>
             </Routes>
         </BrowserRouter>

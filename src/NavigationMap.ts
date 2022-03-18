@@ -70,7 +70,7 @@ export const navigationList = [{
         "sn": "system/program",
         "st": "权限管理",
     }, {
-        "sn": "system/program",
+        "sn": "system/flint/tutorial",
         "st": "Flint教程",
     }]
 }];
