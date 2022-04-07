@@ -31,7 +31,7 @@ export const navigationList = [{
         "sn": "develop/todo",
         "st": "设计文稿",
     }, {
-        "sn": "develop/program",
+        "sn": "develop/planning",
         "st": "开发计划",
     }, {
         "sn": "develop/navigation",

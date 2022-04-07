@@ -19,7 +19,7 @@ function App() {
                     <Route path="work/todo" element={<Todo />} />
                     <Route path="work/program" element={<Program />} />
                     <Route path="work/navigation" element={<Navigation />}/>
-                    <Route path="product/planning" element={<Planning />}/>
+                    <Route path="develop/planning" element={<Planning />}/>
                     <Route path="system/user/list" element={<UserList />}/>
                     <Route path="system/flint/tutorial" element={<UserList />}/>
                 </Route>
